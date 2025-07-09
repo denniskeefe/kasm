@@ -14,16 +14,17 @@ sudo docker pull lscr.io/linuxserver/kasm:latest
 docker run -d \
   --name=kasm \
   --privileged \
-  --security-opt apparmor=rootlesskit \ # optional, remove if not needed
+  --security-opt apparmor=rootlesskit \
   -e KASM_PORT=443 \
-  -e DOCKER_HUB_USERNAME=USER \ # optional, replace USER if needed
-  -e DOCKER_HUB_PASSWORD=PASS \ # optional, replace PASS if needed
-  -e DOCKER_MTU=1500 \ # optional
+  -e DOCKER_HUB_USERNAME=USER \
+  -e DOCKER_HUB_PASSWORD=PASS \
+  -e DOCKER_MTU=1500 \
   -p 3000:3000 \
   -p 443:443 \
   -v /path/to/kasm/data:/opt \
-  -v /path/to/kasm/profiles:/profiles \ # optional
-  -v /dev/input:/dev/input \ # optional
-  -v /run/udev/data:/run/udev/data \ # optional
+  -v /path/to/kasm/profiles:/profiles \
+  -v /dev/input:/dev/input \
+  -v /run/udev/data:/run/udev/data \
   --restart unless-stopped \
   lscr.io/linuxserver/kasm:latest
+
