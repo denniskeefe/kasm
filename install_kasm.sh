@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # Install Docker using snap
-snap install docker
+sudo snap install docker
+
+# Start Docker
+sudo snap start docker
+
 
 # Pull the latest Kasm image from linuxserver
-docker pull lscr.io/linuxserver/kasm:latest
+sudo docker pull lscr.io/linuxserver/kasm:latest
 
 # Run the Kasm container with the specified options
 docker run -d \
