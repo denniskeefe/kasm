@@ -11,7 +11,7 @@ sudo snap start docker
 sudo docker pull lscr.io/linuxserver/kasm:latest
 
 # Run the Kasm container with the specified options
-docker run -d \
+sudo docker run -d \
   --name=kasm \
   --privileged \
   --security-opt apparmor=rootlesskit \
